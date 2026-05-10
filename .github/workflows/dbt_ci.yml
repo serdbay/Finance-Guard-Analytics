@@ -33,6 +33,7 @@ jobs:
                 method: livy
                 endpoint: "placeholder"
                 schema: "placeholder"
+                workspaceid: "placeholder"
           EOF
 
       - name: Run dbt test
