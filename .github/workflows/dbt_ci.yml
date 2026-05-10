@@ -33,8 +33,8 @@ jobs:
                 method: livy
                 endpoint: "placeholder"
                 schema: "placeholder"
-                workspaceid: "placeholder"
-                lakehouseid: "placeholder"
+                workspaceid: "00000000-0000-0000-0000-000000000000"
+                lakehouseid: "00000000-0000-0000-0000-000000000000"
                 lakehouse: "placeholder"
           EOF
 
