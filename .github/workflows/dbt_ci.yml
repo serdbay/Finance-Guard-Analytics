@@ -19,33 +19,19 @@ jobs:
 
       - name: Install dbt
         run: |
-          pip install dbt-core dbt-fabricspark
+          pip install dbt-core dbt-duckdb
 
       - name: Create profiles.yml
         run: |
           mkdir -p /home/runner/.dbt
-          python3 -c "
-          import yaml
-          profile = {
-            'financeGuard': {
-              'target': 'dev',
-              'outputs': {
-                'dev': {
-                  'type': 'fabricspark',
-                  'method': 'livy',
-                  'name': 'placeholder',
-                  'endpoint': 'https://placeholder.fabric.microsoft.com',
-                  'schema': 'placeholder',
-                  'workspaceid': '00000000-0000-0000-0000-000000000000',
-                  'lakehouseid': '00000000-0000-0000-0000-000000000000',
-                  'lakehouse': 'placeholder'
-                }
-              }
-            }
-          }
-          with open('/home/runner/.dbt/profiles.yml', 'w') as f:
-            yaml.dump(profile, f)
-          "
+          cat > /home/runner/.dbt/profiles.yml << 'EOF'
+          financeGuard:
+            target: dev
+            outputs:
+              dev:
+                type: duckdb
+                path: /tmp/ci_test.duckdb
+          EOF
 
       - name: Run dbt parse
         run: |
