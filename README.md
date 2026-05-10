@@ -2,11 +2,11 @@
 
 Production-grade dbt + Microsoft Fabric CI/CD pipeline for fintech fraud detection.
 
-## 🎯 Proje Amacı
+## 🎯 Project Objective
 Fintech şirketi için fraud detection ve regulatory reporting platformu.
 Ham finansal veriyi temiz, test edilmiş ve dokümante edilmiş mart tablolarına dönüştürür.
 
-## 🏗️ Mimari
+## 🏗️ Data Architecture
 raw_customers ──→ stg_customers ──→
 raw_accounts  ──→ stg_accounts  ──→  fct_customer_risk
 raw_transactions → stg_transactions → fct_customer_transactions
@@ -18,7 +18,7 @@ raw_transactions → stg_transactions → fct_customer_transactions
 - GitHub Actions (CI/CD)
 - Azure CLI Authentication
 
-## 📦 Kurulum
+## 📦 Setup
 ```bash
 pip install dbt-core dbt-fabricspark
 dbt debug
