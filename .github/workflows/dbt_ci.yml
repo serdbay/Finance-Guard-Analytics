@@ -23,8 +23,8 @@ jobs:
 
       - name: Create profiles.yml
         run: |
-          mkdir -p $HOME/.dbt
-          cat > $HOME/.dbt/profiles.yml << 'EOF'
+          mkdir -p /home/runner/.dbt
+          cat > /home/runner/.dbt/profiles.yml << 'EOF'
           financeGuard:
             target: dev
             outputs:
@@ -39,4 +39,4 @@ jobs:
         run: |
           dbt test
         env:
-          DBT_PROFILES_DIR: $HOME/.dbt
+          DBT_PROFILES_DIR: /home/runner/.dbt
