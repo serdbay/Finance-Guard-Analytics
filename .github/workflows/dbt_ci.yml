@@ -35,7 +35,7 @@ jobs:
                 schema: "placeholder"
                 workspaceid: "placeholder"
                 lakehouseid: "placeholder"
-		lakehouse: "placeholder"
+                lakehouse: "placeholder"
           EOF
 
       - name: Run dbt test
