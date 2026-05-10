@@ -20,9 +20,23 @@ jobs:
       - name: Install dbt
         run: |
           pip install dbt-core dbt-fabricspark
+
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml << 'EOF'
+          financeGuard:
+            target: dev
+            outputs:
+              dev:
+                type: fabricspark
+                method: livy
+                endpoint: "placeholder"
+                schema: "placeholder"
+        EOF
       
       - name: Run dbt test
         run: |
           dbt test
         env:
-          DBT_PROFILES_DIR: .
+          DBT_PROFILES_DIR: ~/.dbt
