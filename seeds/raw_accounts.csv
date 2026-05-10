@@ -1,0 +1,6 @@
+account_id,customer_id,account_type,balance,status
+101,1,checking,15000.00,active
+102,2,savings,32000.00,active
+103,3,checking,8500.00,suspended
+104,4,savings,67000.00,active
+105,5,checking,12000.00,active

@@ -1,0 +1,14 @@
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Profiles - GÜVENLİK
+profiles.yml
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

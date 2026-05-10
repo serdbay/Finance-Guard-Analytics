@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_customer_transactions
+    description: "Müşteri bazında işlem özeti. Her müşteri için toplam işlem sayısı, toplam tutar, ortalama tutar ve tamamlanan işlem sayısını içerir."
+    columns:
+      - name: customer_name
+        description: "Müşteri adı"
+        tests:
+          - not_null
+          - unique
+      - name: total_transactions
+        description: "Müşterinin toplam işlem sayısı"
+      - name: total_amount
+        description: "Müşterinin toplam işlem tutarı"
+      - name: avg_amount
+        description: "Müşterinin ortalama işlem tutarı"
+      - name: completed_count
+        description: "Tamamlanan işlem sayısı"

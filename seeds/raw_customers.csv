@@ -1,0 +1,6 @@
+customer_id,customer_name,email,city,risk_score
+1,ALI VELI,ali@email.com,Istanbul,45
+2,AYSE KAYA,ayse@email.com,Ankara,72
+3,FATMA DEMIR,fatma@email.com,Izmir,89
+4,MEHMET YILMAZ,mehmet@email.com,Istanbul,23
+5,ZEYNEP ARSLAN,zeynep@email.com,Ankara,61

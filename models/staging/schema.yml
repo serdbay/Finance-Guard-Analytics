@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Ham işlem verisini temizleyen staging modeli. Null değerler filtrelenir, isimler büyük harfe çevrilir, status küçük harfe normalize edilir."
+    columns:
+      - name: transaction_id
+        description: "Her işlemin benzersiz kimliği"
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Müşteri adı - büyük harfe normalize edilmiş"
+      - name: amount
+        description: "İşlem tutarı - null değerler filtrelenmiştir"
+        tests:
+          - not_null
+      - name: transaction_date
+        description: "İşlem tarihi"
+      - name: status
+        description: "İşlem durumu - completed, pending veya failed"
+        tests:
+          - accepted_values:
+              values: ['completed', 'pending', 'failed']
