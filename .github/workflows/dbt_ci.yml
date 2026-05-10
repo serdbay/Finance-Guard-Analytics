@@ -1,0 +1,28 @@
+name: dbt CI Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  dbt-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dbt
+        run: |
+          pip install dbt-core dbt-fabricspark
+      
+      - name: Run dbt test
+        run: |
+          dbt test
+        env:
+          DBT_PROFILES_DIR: .
