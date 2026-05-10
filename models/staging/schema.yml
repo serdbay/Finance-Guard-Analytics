@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_transactions
-    description: "Ham işlem verisini temizleyen staging modeli. Null değerler filtrelenir, isimler büyük harfe çevrilir, status küçük harfe normalize edilir."
+    description: "Ham işlem verisini temizleyen staging modeli. Null değerler filtrelenir, isimler büyük harfe çevrilir, status küçük harfe normalize edilir. Güncellenmiş: v2"
     columns:
       - name: transaction_id
         description: "Her işlemin benzersiz kimliği"
