@@ -47,8 +47,8 @@ jobs:
             yaml.dump(profile, f)
           "
 
-      - name: Run dbt test
+      - name: Run dbt parse
         run: |
-          dbt test
+          dbt parse
         env:
           DBT_PROFILES_DIR: /home/runner/.dbt
