@@ -31,12 +31,11 @@ jobs:
               dev:
                 type: fabricspark
                 method: livy
-                endpoint: "placeholder"
+                endpoint: "https://placeholder.fabric.microsoft.com"
                 schema: "placeholder"
                 workspaceid: "00000000-0000-0000-0000-000000000000"
                 lakehouseid: "00000000-0000-0000-0000-000000000000"
                 lakehouse: "placeholder"
-		endpoint: "https://placeholder.fabric.microsoft.com"
           EOF
 
       - name: Run dbt test
